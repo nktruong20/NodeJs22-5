@@ -19,17 +19,7 @@ router.post('/', auth, async (req, res) => {
   }
 });
 // Express route (Node.js example)
-router.post('/livesessions/:id/end', async (req, res) => {
-  try {
-    const { endTime, isLive, resourceSpent } = JSON.parse(req.body);
-    await LiveSession.findByIdAndUpdate(req.params.id, {
-      endTime, isLive, resourceSpent
-    });
-    res.status(200).send('OK');
-  } catch (err) {
-    res.status(500).send('Error');
-  }
-});
+
 
 
 // ✅ Lấy danh sách phiên đang live của user hiện tại
